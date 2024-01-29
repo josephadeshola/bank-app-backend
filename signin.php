@@ -15,7 +15,7 @@ if ($existingUserResult->num_rows > 0) {
     $hashedPassword = $existingUser['password'];
 
     if (password_verify($password, $hashedPassword)) {
-        echo json_encode(array("status" => true, "message" => "login successful"));
+        echo json_encode(array("status" => true, "message" => "login successful",$existingUser));
     } else {
         echo json_encode(array("status" => false, "message" => "login unsuccessful"));
 
